@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     //1.ประกาศตัวแปร
     EditText number1edittext,number2edittext;
-    Button addbutton;
+    Button addbutton,minusbutton,multiplybutton,dividebutton;
     TextView resultTextview;
     int num1,num2,result;
 
@@ -22,6 +22,9 @@ public class MainActivity extends AppCompatActivity {
         number1edittext = findViewById(R.id.edtNumber1);
         number2edittext = findViewById(R.id.edtNumber2);
         addbutton = findViewById(R.id.btnAdd);
+        minusbutton = findViewById(R.id.btnMinus);
+        multiplybutton = findViewById(R.id.btnMultiply);
+        dividebutton = findViewById(R.id.btnDivide);
         resultTextview = findViewById(R.id.txvResult);
 
         addbutton.setOnClickListener(new View.OnClickListener() {
@@ -31,7 +34,36 @@ public class MainActivity extends AppCompatActivity {
                  num1 = Integer.parseInt(number1edittext.getText().toString().trim());
                 num2 = Integer.parseInt(number2edittext.getText().toString().trim());
                 result = num1 + num2;
-
+                resultTextview.setText(result + "");
+            }
+        });//end setOnClickListenner
+        minusbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //3.แปลงค่าที่รับจาก Edittext เป็นตัวเลขเก็บในตัวแปรชนิด int
+                num1 = Integer.parseInt(number1edittext.getText().toString().trim());
+                num2 = Integer.parseInt(number2edittext.getText().toString().trim());
+                result = num1 - num2;
+                resultTextview.setText(result + "");
+            }
+        });//end setOnClickListenner
+        multiplybutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //3.แปลงค่าที่รับจาก Edittext เป็นตัวเลขเก็บในตัวแปรชนิด int
+                num1 = Integer.parseInt(number1edittext.getText().toString().trim());
+                num2 = Integer.parseInt(number2edittext.getText().toString().trim());
+                result = num1 * num2;
+                resultTextview.setText(result + "");
+            }
+        });//end setOnClickListenner
+        dividebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //3.แปลงค่าที่รับจาก Edittext เป็นตัวเลขเก็บในตัวแปรชนิด int
+                num1 = Integer.parseInt(number1edittext.getText().toString().trim());
+                num2 = Integer.parseInt(number2edittext.getText().toString().trim());
+                result = num1 / num2;
                 resultTextview.setText(result + "");
             }
         });//end setOnClickListenner
